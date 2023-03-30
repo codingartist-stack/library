@@ -9,3 +9,7 @@ function Book(title, author, pages, read) {
     return title + " by " + author + ", " + pages + " pages, " + read;
   };
 }
+
+function addBookToLibrary() {
+  //do stuff here
+}
