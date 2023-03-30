@@ -8,5 +8,32 @@
     <script src="javaScript.js"></script>
     <title>Library Project</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Library</h1>
+      <p>We love all the books!</p>
+    </header>
+    <div class="form_container">
+      <form action="" method="get" class="newBookForm">
+        <div class="bookTitle">
+          <label for="title">Book Title: </label>
+          <input type="text" name="bookTitle" id="title" />
+        </div>
+        <div class="bookAuthor">
+          <label for="author">Book Author: </label>
+          <input type="text" name="author" id="author" />
+        </div>
+        <div class="bookPages">
+          <label for="numOfPages">Number of Pages: </label>
+          <input type="text" name="numOfPages" id="numOfPages" />
+        </div>
+        <div class="read">
+          <label for="readOrNot">Have you read this book?</label>
+          <button>Yes</button>
+          <button>No</button>
+        </div>
+      </form>
+    </div>
+    <div class="card_container"></div>
+  </body>
 </html>
