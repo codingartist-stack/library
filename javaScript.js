@@ -55,8 +55,8 @@ function addBookToLibrary() {
   //push new book to myLibrary
   console.log(bookTitle.value);
   title = bookTitle.value;
-  bookAuthor.value = author;
-  numOfPages.value = pages;
+  author = bookAuthor.value;
+  pages = numOfPages.value;
   if ((haveReadOrNot = true)) {
     read = "Read";
   } else {
@@ -77,4 +77,5 @@ function displayCard() {
   //display each book
   //first create a table?
   //would like to make cards and use grid flex to lay them out.
+  //loop
 }
