@@ -1,7 +1,9 @@
+console.log("I am connected to the html file");
+
 const displayForm = document.getElementById("showForm");
 
 displayForm.addEventListener("click", (e) => {
-  document.getElementsByClassName("form_container").style.display = "grid";
+  document.getElementsByClassName("form_container")[0].style.display = "grid";
 });
 
 let myLibray = [];
