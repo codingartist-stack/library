@@ -1,3 +1,9 @@
+const displayForm = document.getElementById("showForm");
+
+displayForm.addEventListener("click", (e) => {
+  document.getElementsByClassName("form_container").style.display = "grid";
+});
+
 let myLibray = [];
 
 function Book(title, author, pages, read) {
