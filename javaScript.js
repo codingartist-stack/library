@@ -6,6 +6,7 @@ const bookAuthor = document.getElementById("author");
 const numOfPages = document.getElementById("numOfPages");
 const haveReadOrNot = document.getElementById("haveRead");
 const submitBook = document.getElementById("submitBook");
+const clearButton = document.getElementById("clear");
 
 displayForm.addEventListener("click", (e) => {
   document.getElementById("form_container").style.display = "grid";
@@ -65,15 +66,25 @@ function addBookToLibrary() {
   let nextBook = new Book(title, author, pages, read);
 
   myLibray.push(nextBook);
+}
 
+function clearForm() {
   bookTitle.value = "";
   bookAuthor.value = "";
   numOfPages.value = "";
+  if (haveReadOrNot.checked) {
+    haveReadOrNot.checked = false;
+  }
 }
 
 submitBook.addEventListener("click", (e) => {
   //   console.log("am I working?");
   addBookToLibrary();
+  clearForm();
+});
+
+clearButton.addEventListener("click", (e) => {
+  clearForm();
 });
 
 function displayCard() {
