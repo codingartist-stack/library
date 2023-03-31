@@ -1,3 +1,15 @@
 #form_container {
   display: none;
 }
+
+#card_container {
+  display: grid;
+  background-color: blueviolet;
+  height: 50vh;
+}
+
+.card {
+  background-color: white;
+  height: 20px;
+  width: 30px;
+}
