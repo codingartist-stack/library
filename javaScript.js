@@ -45,15 +45,6 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  //do stuff here
-  //when submit it clicked  should this be a different function?
-  //title value =title
-  //author value = title
-  //pages value = pages
-  //if haveRead is checked read = Read
-  //if haveRead is not checked read = Have not read
-  //create new book const newbook = new Book(title, author, pages, read)
-  //push new book to myLibrary
   title = bookTitle.value;
   author = bookAuthor.value;
   pages = numOfPages.value;
@@ -89,7 +80,7 @@ clearButton.addEventListener("click", (e) => {
 
 function displayCard() {
   //display each book
-  //first create a table?
-  //would like to make cards and use grid flex to lay them out.
-  //loop
+  //Loop!
+  //create div for each book
+  //in the div display info (how will it be displayed?)
 }
