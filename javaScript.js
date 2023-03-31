@@ -53,23 +53,22 @@ function addBookToLibrary() {
   //if haveRead is not checked read = Have not read
   //create new book const newbook = new Book(title, author, pages, read)
   //push new book to myLibrary
-  console.log(bookTitle.value);
   title = bookTitle.value;
   author = bookAuthor.value;
   pages = numOfPages.value;
-  if ((haveReadOrNot = true)) {
+  if (haveReadOrNot.checked) {
     read = "Read";
   } else {
     read = "Have Not Read";
   }
 
-  const nextBook = new Book(title, author, pages, read);
+  let nextBook = new Book(title, author, pages, read);
 
   myLibray.push(nextBook);
 }
 
 submitBook.addEventListener("click", (e) => {
-  console.log("am I working?");
+  //   console.log("am I working?");
   addBookToLibrary();
 });
 
