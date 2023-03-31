@@ -11,7 +11,27 @@ displayForm.addEventListener("click", (e) => {
   document.getElementById("form_container").style.display = "grid";
 });
 
-let myLibray = [];
+let myLibray = [
+  { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: "Read" },
+  {
+    title: "Howl's Moving Castle",
+    author: "Diana Wynne Jones",
+    pages: 329,
+    read: "Read",
+  },
+  {
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    pages: 214,
+    read: "Read",
+  },
+  {
+    title: "The Boy, the Mole, the Fox and the Horse",
+    author: "Charlie Mackesy",
+    pages: 128,
+    read: "Read",
+  },
+];
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -29,8 +49,8 @@ function addBookToLibrary() {
   //title value =title
   //author value = title
   //pages value = pages
-  //if haveRead is checked read = I have read
-  //if haveRead is not checked read = I have not read
+  //if haveRead is checked read = Read
+  //if haveRead is not checked read = Have not read
   //create new book const newbook = new Book(title, author, pages, read)
   //push new book to myLibrary
 }
