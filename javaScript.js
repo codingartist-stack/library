@@ -32,4 +32,5 @@ function addBookToLibrary() {
   //if haveRead is checked read = I have read
   //if haveRead is not checked read = I have not read
   //create new book const newbook = new Book(title, author, pages, read)
+  //push new book to myLibrary
 }
