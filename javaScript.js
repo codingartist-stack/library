@@ -1,4 +1,4 @@
-// console.log("I am connected to the html file");
+console.log("I am connected to the html file");
 
 const displayForm = document.getElementById("showForm");
 const bookTitle = document.getElementById("title");
