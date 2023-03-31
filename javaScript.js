@@ -1,10 +1,10 @@
 // console.log("I am connected to the html file");
 
 const displayForm = document.getElementById("showForm");
-const title = document.getElementById("title");
-const author = document.getElementById("author");
-const pages = document.getElementById("numOfPages");
-const haveRead = document.getElementById("haveRead");
+const bookTitle = document.getElementById("title");
+const bookAuthor = document.getElementById("author");
+const numOfPages = document.getElementById("numOfPages");
+const haveReadOrNot = document.getElementById("haveRead");
 const submitBook = document.getElementById("submitBook");
 
 displayForm.addEventListener("click", (e) => {
@@ -45,7 +45,7 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary() {
   //do stuff here
-  //when submit it clicked
+  //when submit it clicked  should this be a different function?
   //title value =title
   //author value = title
   //pages value = pages
@@ -53,7 +53,25 @@ function addBookToLibrary() {
   //if haveRead is not checked read = Have not read
   //create new book const newbook = new Book(title, author, pages, read)
   //push new book to myLibrary
+  console.log(bookTitle.value);
+  title = bookTitle.value;
+  bookAuthor.value = author;
+  numOfPages.value = pages;
+  if ((haveReadOrNot = true)) {
+    read = "Read";
+  } else {
+    read = "Have Not Read";
+  }
+
+  const nextBook = new Book(title, author, pages, read);
+
+  myLibray.push(nextBook);
 }
+
+submitBook.addEventListener("click", (e) => {
+  console.log("am I working?");
+  addBookToLibrary();
+});
 
 function displayCard() {
   //display each book
