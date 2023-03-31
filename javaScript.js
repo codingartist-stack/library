@@ -1,10 +1,11 @@
-console.log("I am connected to the html file");
+// console.log("I am connected to the html file");
 
 const displayForm = document.getElementById("showForm");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("numOfPages");
 const haveRead = document.getElementById("haveRead");
+const submitBook = document.getElementById("submitBook");
 
 displayForm.addEventListener("click", (e) => {
   document.getElementById("form_container").style.display = "grid";
