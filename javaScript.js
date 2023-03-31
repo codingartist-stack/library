@@ -25,4 +25,11 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary() {
   //do stuff here
+  //when submit it clicked
+  //title value =title
+  //author value = title
+  //pages value = pages
+  //if haveRead is checked read = I have read
+  //if haveRead is not checked read = I have not read
+  //create new book const newbook = new Book(title, author, pages, read)
 }
