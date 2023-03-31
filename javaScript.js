@@ -65,6 +65,10 @@ function addBookToLibrary() {
   let nextBook = new Book(title, author, pages, read);
 
   myLibray.push(nextBook);
+
+  bookTitle.value = "";
+  bookAuthor.value = "";
+  numOfPages.value = "";
 }
 
 submitBook.addEventListener("click", (e) => {
