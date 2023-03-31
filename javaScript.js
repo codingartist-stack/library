@@ -34,3 +34,9 @@ function addBookToLibrary() {
   //create new book const newbook = new Book(title, author, pages, read)
   //push new book to myLibrary
 }
+
+function displayCard() {
+  //display each book
+  //first create a table?
+  //would like to make cards and use grid flex to lay them out.
+}
