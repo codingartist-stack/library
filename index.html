@@ -16,15 +16,15 @@
     <button id="showForm">Add Book</button>
     <div id="form_container">
       <form action="" method="get" class="newBookForm">
-        <div class="bookTitle">
+        <div class="bookTitle inputField">
           <label for="title">Book Title: </label>
           <input type="text" name="bookTitle" id="title" />
         </div>
-        <div class="bookAuthor">
+        <div class="bookAuthor inputField">
           <label for="author">Book Author: </label>
           <input type="text" name="author" id="author" />
         </div>
-        <div class="bookPages">
+        <div class="bookPages inputField">
           <label for="numOfPages">Number of Pages: </label>
           <input type="number" name="numOfPages" id="numOfPages" />
         </div>
@@ -33,11 +33,13 @@
           <label for="readOrNot">I have Read the book</label>
         </div>
 
-        <div class="submit">
-          <button type="button" id="submitBook">Submit Book</button>
-        </div>
-        <div id="clear">
-          <button type="button">Clear Form</button>
+        <div id="formButtons">
+          <div class="submit">
+            <button type="button" id="submitBook">Submit Book</button>
+          </div>
+          <div id="clear">
+            <button type="button">Clear Form</button>
+          </div>
         </div>
       </form>
     </div>
