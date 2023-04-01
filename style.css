@@ -1,5 +1,9 @@
 #form_container {
   display: none;
+  padding: 10px;
+}
+
+.newBookForm {
 }
 
 #card_container {
