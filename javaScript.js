@@ -82,6 +82,7 @@ clearButton.addEventListener("click", (e) => {
 function displayCard() {
   //display each book
   //Loop!
-  //create div for each book
+  //create div for each book (appendchild)
   //in the div display info (how will it be displayed?)
+  for (let index = 0; index < myLibray.length; index++) {}
 }
