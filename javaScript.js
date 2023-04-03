@@ -85,9 +85,11 @@ function displayCard() {
   //create div for each book (appendchild)
   //in the div display info (how will it be displayed?)
   for (let index = 0; index < myLibray.length; index++) {
-    cardContainer
-      .appendChild(document.createElement("div"))
-      .appendChild(document.createElement("p"));
+    const bookInfo = document.createElement("div");
+    bookInfo.classList.add("bookDetails");
+    bookInfo.innerHTML =
+      "<strong>Title: </strong> ${title[0]} <br /><strong>Author: </strong> <br /><strong>Pages: </strong> <br />";
+    cardContainer.appendChild(bookInfo);
   }
 }
 
