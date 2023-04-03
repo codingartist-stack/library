@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #showForm {
@@ -38,7 +38,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
 }
 
-#card_container div {
+.bookDetails {
   background-color: white;
   border-radius: 7px;
   box-shadow: 5px 5px 5px #bdc5cf;
