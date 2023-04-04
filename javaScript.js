@@ -73,6 +73,8 @@ submitBook.addEventListener('click', (e) => {
   //   console.log("am I working?");
   addBookToLibrary();
   clearForm();
+  cardContainer.innerHTML = '';
+  displayCard();
 });
 
 clearButton.addEventListener('click', (e) => {
