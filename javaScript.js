@@ -8,6 +8,7 @@ const haveReadOrNot = document.getElementById('haveRead');
 const submitBook = document.getElementById('submitBook');
 const clearButton = document.getElementById('clear');
 const cardContainer = document.getElementById('card_container');
+let changeReadStatus;
 
 displayForm.addEventListener('click', (e) => {
   document.getElementById('form_container').style.display = 'grid';
@@ -92,7 +93,8 @@ function displayCard() {
     bookInfo.innerHTML = `<strong>Title: </strong> ${book.title} 
     <br /><strong>Author: </strong> ${book.author} 
     <br /><strong>Pages: </strong> ${book.pages}
-    <br /><strong>Read Status: </strong> ${book.read}`;
+    <br /><strong>Read Status: </strong> ${book.read} 
+    <br /><button type="button" class="changeReadStatus">Change Read Status</button>`;
     cardContainer.appendChild(bookInfo);
   }
 
