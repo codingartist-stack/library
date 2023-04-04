@@ -8,7 +8,6 @@ const haveReadOrNot = document.getElementById('haveRead');
 const submitBook = document.getElementById('submitBook');
 const clearButton = document.getElementById('clear');
 const cardContainer = document.getElementById('card_container');
-let changeReadStatus;
 
 displayForm.addEventListener('click', (e) => {
   document.getElementById('form_container').style.display = 'grid';
