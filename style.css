@@ -3,8 +3,27 @@ body {
   margin: 0;
 }
 
+header {
+  display: grid;
+  justify-items: center;
+  background-color: #8bdac7;
+}
+
+button {
+  background-color: #8bdac7;
+  /* color: white; */
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+button:hover {
+  background-color: #126451;
+  color: white;
+}
+
 #showForm {
-  margin: 10px;
+  margin: 25px;
 }
 
 #form_container {
