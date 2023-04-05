@@ -111,10 +111,11 @@ function displayCard() {
       console.log('I was clicked');
       //Works... but won't toggle...
       if (book.read === 'Read') {
-        bookStatus.textContent = 'Read Status: Have Not Read';
-      }
-      if (book.read === 'Have Not Read') {
-        bookStatus.textContent = 'Read Status: Read';
+        book.read = 'Have Not Read';
+        bookStatus.textContent = `Read Status: ${book.read}`;
+      } else if (book.read === 'Have Not Read') {
+        book.read = 'Read';
+        bookStatus.textContent = `Read Status: ${book.read}`;
       }
     });
   }
