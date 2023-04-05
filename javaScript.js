@@ -114,7 +114,7 @@ function displayCard() {
         bookStatus.textContent = 'Read Status: Have Not Read';
       }
       if (book.read === 'Have Not Read') {
-        bookStatus.textContent = 'Read Status: Have Read';
+        bookStatus.textContent = 'Read Status: Read';
       }
     });
   }
