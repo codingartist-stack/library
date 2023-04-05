@@ -65,5 +65,5 @@ button:hover {
   box-shadow: 5px 5px 5px #bdc5cf;
   border: 2px solid #8997a8;
   padding: 20px;
-  line-height: 1.75;
+  /* line-height: 1.75; */
 }

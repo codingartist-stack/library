@@ -89,12 +89,34 @@ function displayCard() {
   for (const book of myLibray) {
     const bookInfo = document.createElement('div');
     bookInfo.classList.add('bookDetails');
-    bookInfo.innerHTML = `<strong>Title: </strong> ${book.title} 
-    <br /><strong>Author: </strong> ${book.author} 
-    <br /><strong>Pages: </strong> ${book.pages}
-    <br /><strong>Read Status: </strong> ${book.read} 
-    <br /><button type="button" class="changeReadStatus">Change Read Status</button>`;
+    const bookTitle = document.createElement('p');
+    bookTitle.textContent = `Title: ${book.title}`;
+    const bookAuthor = document.createElement('p');
+    bookAuthor.textContent = `Author: ${book.author}`;
+    const bookPages = document.createElement('p');
+    bookPages.textContent = `Pages: ${book.pages}`;
+    const bookStatus = document.createElement('p');
+    bookStatus.textContent = `Read Status: ${book.read}`;
+    const changeReadStatus = document.createElement('button');
+    changeReadStatus.textContent = `Change Read Status`;
+
     cardContainer.appendChild(bookInfo);
+    bookInfo.appendChild(bookTitle);
+    bookInfo.appendChild(bookAuthor);
+    bookInfo.appendChild(bookPages);
+    bookInfo.appendChild(bookStatus);
+    bookInfo.appendChild(changeReadStatus);
+
+    changeReadStatus.addEventListener('click', (e) => {
+      console.log('I was clicked');
+      //Works... but won't toggle...
+      if (book.read === 'Read') {
+        bookStatus.textContent = 'Read Status: Have Not Read';
+      }
+      if (book.read === 'Have Not Read') {
+        bookStatus.textContent = 'Read Status: Have Read';
+      }
+    });
   }
 
   //   for (let index = 0; index < myLibray.length; index++) {
