@@ -97,8 +97,12 @@ function displayCard() {
     bookPages.textContent = `Pages: ${book.pages}`;
     const bookStatus = document.createElement('p');
     bookStatus.textContent = `Read Status: ${book.read}`;
+
     const changeReadStatus = document.createElement('button');
     changeReadStatus.textContent = `Change Read Status`;
+
+    const removeBook = document.createElement('button');
+    removeBook.textContent = 'delete Book';
 
     cardContainer.appendChild(bookInfo);
     bookInfo.appendChild(bookTitle);
@@ -106,6 +110,7 @@ function displayCard() {
     bookInfo.appendChild(bookPages);
     bookInfo.appendChild(bookStatus);
     bookInfo.appendChild(changeReadStatus);
+    bookInfo.appendChild(removeBook);
 
     changeReadStatus.addEventListener('click', (e) => {
       console.log('I was clicked');
@@ -117,6 +122,12 @@ function displayCard() {
         book.read = 'Read';
         bookStatus.textContent = `Read Status: ${book.read}`;
       }
+    });
+
+    removeBook.addEventListener('click', (e) => {
+      console.log(myLibray.splice());
+      cardContainer.innerHTML = '';
+      displayCard();
     });
   }
 
