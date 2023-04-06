@@ -102,7 +102,7 @@ function displayCard() {
     changeReadStatus.textContent = `Change Read Status`;
 
     const removeBook = document.createElement('button');
-    removeBook.textContent = 'delete Book';
+    removeBook.textContent = 'Delete Book';
 
     cardContainer.appendChild(bookInfo);
     bookInfo.appendChild(bookTitle);
@@ -125,13 +125,16 @@ function displayCard() {
     });
 
     removeBook.addEventListener('click', (e) => {
-      console.log(myLibray.splice());
-      cardContainer.innerHTML = '';
-      displayCard();
+      console.log(book);
+      bookInfo.classList.add('hideBook');
+
+      //   cardContainer.innerHTML = '';
+      //   displayCard();
     });
   }
 
-  //   for (let index = 0; index < myLibray.length; index++) {
+  //    for loop the C way
+  //    for (let index = 0; index < myLibray.length; index++) {
   //     const book = myLibray[index];
   //     const bookInfo = document.createElement('div');
   //     bookInfo.classList.add('bookDetails');

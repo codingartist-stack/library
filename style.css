@@ -88,3 +88,7 @@ button:hover {
 .bookDetails p {
   margin: 0;
 }
+
+.hideBook {
+  display: none;
+}
