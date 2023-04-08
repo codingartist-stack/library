@@ -56,16 +56,16 @@ function Book(title, author, pages, isbn, read) {
   };
 }
 
-function addBookToLibrary() {
+function addToBookCase() {
   title = bookTitle.value;
   author = bookAuthor.value;
   pages = numOfPages.value;
   isbn = bookisbn.value;
   read = haveReadOrNot.checked;
 
-  let nextBook = new Book(title, author, pages, isbn, read);
+  let book = new Book(title, author, pages, isbn, read);
 
-  myLibray.push(nextBook);
+  myLibray[book.isbn] = book;
 }
 
 function clearForm() {
@@ -80,9 +80,8 @@ function clearForm() {
 
 submitBook.addEventListener('click', (e) => {
   //   console.log("am I working?");
-  addBookToLibrary();
+  addToBookCase();
   clearForm();
-  bookCase.innerHTML = '';
   displayBooks();
 });
 
@@ -91,6 +90,7 @@ clearButton.addEventListener('click', (e) => {
 });
 
 function displayBooks() {
+  bookCase.innerHTML = '';
   //display each book
   //Loop!
   //create div for each book (appendchild)
@@ -108,7 +108,7 @@ function displayBooks() {
     const bookisbn = document.createElement('p');
     bookisbn.textContent = `ISBN: ${book.isbn}`;
     const bookStatus = document.createElement('p');
-    bookStatus.textContent = `Read Status: ${book.read}`;
+    bookStatus.textContent = `Read: ${book.read}`;
 
     const changeReadStatus = document.createElement('button');
     changeReadStatus.textContent = `Change Read Status`;
@@ -130,21 +130,18 @@ function displayBooks() {
       //Works... but won't toggle...
       if (book.read === true) {
         book.read = false;
-        bookStatus.textContent = `Read Status: ${book.read}`;
+        bookStatus.textContent = `Read: ${book.read}`;
       } else if (book.read === false) {
         book.read = true;
-        bookStatus.textContent = `Read Status: ${book.read}`;
+        bookStatus.textContent = `Read: ${book.read}`;
       }
     });
 
     removeBook.addEventListener('click', (e) => {
-      // console.log(book);
+      console.log(book);
+      delete myLibray[book.isbn];
       // bookInfo.classList.add('hideBook');
-
-      myLibray.splice(index, 1);
-
-      //   cardContainer.innerHTML = '';
-      //   displayCard();
+      displayBooks();
     });
   }
 
