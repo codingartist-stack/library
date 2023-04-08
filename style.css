@@ -63,7 +63,7 @@ button:hover {
   display: grid;
 }
 
-#card_container {
+#bookCase {
   display: grid;
   background-color: #eaf4f9;
   box-shadow: inset 0 5px 5px #bdc5cf;

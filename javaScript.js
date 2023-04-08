@@ -4,41 +4,52 @@ const displayForm = document.getElementById('showForm');
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const numOfPages = document.getElementById('numOfPages');
+const bookisbn = document.getElementById('isbn');
 const haveReadOrNot = document.getElementById('haveRead');
 const submitBook = document.getElementById('submitBook');
 const clearButton = document.getElementById('clear');
-const cardContainer = document.getElementById('card_container');
+const bookCase = document.getElementById('bookCase');
 
 displayForm.addEventListener('click', (e) => {
   document.getElementById('form_container').style.display = 'grid';
 });
 
-let myLibray = [
-  { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 295, read: 'Read' },
-  {
-    title: "Howl's Moving Castle",
-    author: 'Diana Wynne Jones',
-    pages: 329,
-    read: 'Read',
-  },
-  {
-    title: 'The Catcher in the Rye',
-    author: 'J.D. Salinger',
-    pages: 214,
-    read: 'Read',
-  },
-  {
-    title: 'The Boy, the Mole, the Fox and the Horse',
-    author: 'Charlie Mackesy',
-    pages: 128,
-    read: 'Read',
-  },
-];
+let myLibray = {
+  9780261102217: new Book(
+    'The Hobbit',
+    'J.R.R. Tolkien',
+    295,
+    9780261102217,
+    true
+  ),
+  9780064410342: new Book(
+    `Howl's Moving Castle`,
+    'Diana Wynne Jones',
+    329,
+    9780064410342,
+    true
+  ),
+  9780140237498: new Book(
+    'The Catcher in the Rye',
+    'J.D. Salinger',
+    214,
+    9780140237498,
+    true
+  ),
+  9788831004923: new Book(
+    'The Boy, the Mole, the Fox and the Horse',
+    'Charlie Mackesy',
+    128,
+    9788831004923,
+    true
+  ),
+};
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, isbn, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.isbn = isbn;
   this.read = read;
   this.info = function () {
     return title + ' by ' + author + ', ' + pages + ' pages, ' + read;
@@ -49,13 +60,10 @@ function addBookToLibrary() {
   title = bookTitle.value;
   author = bookAuthor.value;
   pages = numOfPages.value;
-  if (haveReadOrNot.checked) {
-    read = 'Read';
-  } else {
-    read = 'Have Not Read';
-  }
+  isbn = bookisbn.value;
+  read = haveReadOrNot.checked;
 
-  let nextBook = new Book(title, author, pages, read);
+  let nextBook = new Book(title, author, pages, isbn, read);
 
   myLibray.push(nextBook);
 }
@@ -64,6 +72,7 @@ function clearForm() {
   bookTitle.value = '';
   bookAuthor.value = '';
   numOfPages.value = '';
+  bookisbn.value = '';
   if (haveReadOrNot.checked) {
     haveReadOrNot.checked = false;
   }
@@ -73,21 +82,22 @@ submitBook.addEventListener('click', (e) => {
   //   console.log("am I working?");
   addBookToLibrary();
   clearForm();
-  cardContainer.innerHTML = '';
-  displayCard();
+  bookCase.innerHTML = '';
+  displayBooks();
 });
 
 clearButton.addEventListener('click', (e) => {
   clearForm();
 });
 
-function displayCard() {
+function displayBooks() {
   //display each book
   //Loop!
   //create div for each book (appendchild)
   //in the div display info (how will it be displayed?
-  for (const book of myLibray) {
+  for (const book of Object.values(myLibray)) {
     const bookInfo = document.createElement('div');
+    bookInfo.id = book.isbn;
     bookInfo.classList.add('bookDetails');
     const bookTitle = document.createElement('p');
     bookTitle.textContent = `Title: ${book.title}`;
@@ -95,6 +105,8 @@ function displayCard() {
     bookAuthor.textContent = `Author: ${book.author}`;
     const bookPages = document.createElement('p');
     bookPages.textContent = `Pages: ${book.pages}`;
+    const bookisbn = document.createElement('p');
+    bookisbn.textContent = `ISBN: ${book.isbn}`;
     const bookStatus = document.createElement('p');
     bookStatus.textContent = `Read Status: ${book.read}`;
 
@@ -104,10 +116,11 @@ function displayCard() {
     const removeBook = document.createElement('button');
     removeBook.textContent = 'Delete Book';
 
-    cardContainer.appendChild(bookInfo);
+    bookCase.appendChild(bookInfo);
     bookInfo.appendChild(bookTitle);
     bookInfo.appendChild(bookAuthor);
     bookInfo.appendChild(bookPages);
+    bookInfo.appendChild(bookisbn);
     bookInfo.appendChild(bookStatus);
     bookInfo.appendChild(changeReadStatus);
     bookInfo.appendChild(removeBook);
@@ -115,18 +128,20 @@ function displayCard() {
     changeReadStatus.addEventListener('click', (e) => {
       console.log('I was clicked');
       //Works... but won't toggle...
-      if (book.read === 'Read') {
-        book.read = 'Have Not Read';
+      if (book.read === true) {
+        book.read = false;
         bookStatus.textContent = `Read Status: ${book.read}`;
-      } else if (book.read === 'Have Not Read') {
-        book.read = 'Read';
+      } else if (book.read === false) {
+        book.read = true;
         bookStatus.textContent = `Read Status: ${book.read}`;
       }
     });
 
     removeBook.addEventListener('click', (e) => {
-      console.log(book);
-      bookInfo.classList.add('hideBook');
+      // console.log(book);
+      // bookInfo.classList.add('hideBook');
+
+      myLibray.splice(index, 1);
 
       //   cardContainer.innerHTML = '';
       //   displayCard();
@@ -143,4 +158,4 @@ function displayCard() {
   //   }
 }
 
-displayCard();
+displayBooks();
